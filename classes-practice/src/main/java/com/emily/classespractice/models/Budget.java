@@ -22,7 +22,6 @@ public class Budget {
     public void setExpenses(ArrayList<Expense> expenses){
         this.expenses = expenses;
     }
-
     
     public void addExpense(Expense e){
         expenses.add(e);
