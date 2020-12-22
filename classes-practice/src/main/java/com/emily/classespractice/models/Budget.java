@@ -10,10 +10,10 @@ public class Budget {
         this.totalAmount = totalAmount;
         this.expenses = new ArrayList<Expense>();
     }
-    public double getTotalMoney(){
+    public double getTotalAmount(){
         return totalAmount;
     }
-    public void setTotalMoney(double totalAmount){
+    public void setTotalAmount(double totalAmount){
         this.totalAmount = totalAmount;
     }
     public ArrayList<Expense> getExpenses(){

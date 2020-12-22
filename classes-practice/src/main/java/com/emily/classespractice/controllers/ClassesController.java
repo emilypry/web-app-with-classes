@@ -4,8 +4,8 @@ import com.emily.classespractice.models.Budget;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -17,8 +17,7 @@ public class ClassesController{
 
     @PostMapping("")
     @ResponseBody
-    public String makeNewBudget(@RequestParam double totalAmount){
-        Budget budget = new Budget(totalAmount);
-        return "Added budget with "+budget.getTotalMoney();
+    public String makeNewBudget(@ModelAttribute Budget budget){
+        return "Added budget with "+budget.getTotalAmount();
     }
 }
