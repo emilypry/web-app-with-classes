@@ -32,7 +32,7 @@ public class Budget {
     public double getMoneySpent(){
         double moneySpent = 0;
         for(Expense e : expenses){
-            moneySpent += e.price;
+            moneySpent += e.getAmount();
         }
         return moneySpent;
     }
