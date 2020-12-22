@@ -1,19 +1,20 @@
 package com.emily.classespractice.models;
+import java.util.ArrayList;
 
 public class Budget {
     private double totalAmount;
     private ArrayList<Expense> expenses;
 
-    public Budget()
-    public Budget(double totalAmount, ArrayList<Expense> expenses){
+    public Budget(){}
+    public Budget(double totalAmount){
         this.totalAmount = totalAmount;
-        this.expenses = expenses;
+        this.expenses = new ArrayList<Expense>();
     }
     public double getTotalMoney(){
-        return totalMoney;
+        return totalAmount;
     }
-    public void setTotalMoney(double totalMoney){
-        this.totalMoney = totalMoney;
+    public void setTotalMoney(double totalAmount){
+        this.totalAmount = totalAmount;
     }
     public ArrayList<Expense> getExpenses(){
         return expenses;
@@ -22,6 +23,7 @@ public class Budget {
         this.expenses = expenses;
     }
 
+    
     public void addExpense(Expense e){
         expenses.add(e);
     }
@@ -37,6 +39,6 @@ public class Budget {
     }
     public double getAvailableMoney(){
         double moneySpent = getMoneySpent();
-        return totalMoney - moneySpent;
+        return totalAmount - moneySpent;
     } 
 }
