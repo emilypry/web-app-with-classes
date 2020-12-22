@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.emily</groupId>
-	<artifactId>Simple-web-app-with-classes</artifactId>
+	<artifactId>classes-practice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Simple-web-app-with-classes</name>
+	<name>classes-practice</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
