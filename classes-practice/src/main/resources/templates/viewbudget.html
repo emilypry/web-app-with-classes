@@ -7,6 +7,20 @@
 <body>
     <center>
         <h1 th:text="'Total amount in budget: '+${amount}"></h1>
+
+        <form method="post">
+            <span style="margin-right:20px"><b>Enter a new expense</b></span>
+            <label for="amountBox">Amount: $</label>
+            <input type="text" id="amountBox" name="amount"/>
+
+            <label for="descBox">Description: </label>
+            <input type="text" id="descBox" name="description"/>
+
+            <label for="catBox">Category: </label>
+            <input type="text" id="catBox" name="category" />
+
+            <input type="submit" />
+        </form>
     </center>
 </body>
 </html>
