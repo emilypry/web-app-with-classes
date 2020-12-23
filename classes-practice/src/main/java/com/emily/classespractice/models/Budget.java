@@ -3,12 +3,12 @@ import java.util.ArrayList;
 
 public class Budget {
     private double totalAmount;
-    private ArrayList<Expense> expenses;
+    private ArrayList<Expense> expenses = new ArrayList<Expense>();
 
     public Budget(){}
     public Budget(double totalAmount){
         this.totalAmount = totalAmount;
-        this.expenses = new ArrayList<Expense>();
+        //this.expenses = new ArrayList<Expense>();
     }
     public double getTotalAmount(){
         return totalAmount;

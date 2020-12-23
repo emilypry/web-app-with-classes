@@ -34,9 +34,9 @@ public class ClassesController{
     }
 
     @PostMapping("mybudget")
-    @ResponseBody
-    public String makeNewExpense(@ModelAttribute Expense expense){
+    public String makeNewExpense(@ModelAttribute Expense expense, Model model){
         myBudget.addExpense(expense);
-        return "Added expense: "+expense.getAmount()+expense.getDescription()+expense.getCategory()+myBudget.getMoneySpent();
+        model.addAttribute("amount", myBudget.getTotalAmount());
+        return "redirect:mybudget";
     }
 }
