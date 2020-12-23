@@ -8,6 +8,10 @@
     <center>
         <h1 th:text="'Total amount in budget: '+${amount}"></h1>
 
+        <ol th:if="${expenses.size()>0}">
+            <li th:each="e : expenses" th:text="e"></li>
+        </ol>
+
         <form method="post">
             <span style="margin-right:20px"><b>Enter a new expense</b></span>
             <label for="amountBox">Amount: $</label>
@@ -21,6 +25,7 @@
 
             <input type="submit" />
         </form>
+
     </center>
 </body>
 </html>
