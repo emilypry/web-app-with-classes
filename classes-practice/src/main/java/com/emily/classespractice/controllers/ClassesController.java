@@ -30,8 +30,7 @@ public class ClassesController{
     @GetMapping("mybudget")
     public String showBudget(Model model){
         model.addAttribute("amount", myBudget.getTotalAmount());
-
-        model.addAttribute("expenses", myBudget.getExpenses());
+        model.addAttribute("expenses", myBudget.getExpenses()); 
         return "viewbudget";
     }
 

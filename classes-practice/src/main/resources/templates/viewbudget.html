@@ -9,7 +9,7 @@
         <h1 th:text="'Total amount in budget: '+${amount}"></h1>
 
         <ol th:if="${expenses.size()>0}">
-            <li th:each="e : expenses" th:text="e"></li>
+            <li th:each="e : ${expenses}" th:text="'Amount: $'+${e.amount}+' Description: '+${e.description}+' Category: '+${e.category}"></li>
         </ol>
 
         <form method="post">
