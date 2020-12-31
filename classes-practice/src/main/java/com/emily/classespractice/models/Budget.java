@@ -8,7 +8,6 @@ public class Budget {
     public Budget(){}
     public Budget(double totalAmount){
         this.totalAmount = totalAmount;
-        //this.expenses = new ArrayList<Expense>();
     }
     public double getTotalAmount(){
         return totalAmount;
@@ -35,10 +34,13 @@ public class Budget {
         for(Expense e : expenses){
             moneySpent += e.getAmount();
         }
-        return moneySpent;
+        String two = String.format("%.2f", moneySpent);
+        return Double.parseDouble(two);
     }
     public double getAvailableMoney(){
         double moneySpent = getMoneySpent();
-        return totalAmount - moneySpent;
+        double availableMoney = totalAmount - moneySpent;
+        String two = String.format("%.2f", availableMoney);
+        return Double.parseDouble(two);
     } 
 }

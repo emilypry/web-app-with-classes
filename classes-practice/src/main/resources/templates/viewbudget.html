@@ -3,30 +3,33 @@
 <head>
     <title>Budget Tracker</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 </head>
 <body>
     <center>
-        <h1 th:text="'Total amount in budget: '+${amount}"></h1>
+        <h2 th:text="'Total amount in budget: $'+${amount}"></h2>
 
-        <!--
-        <ol th:if="${expenses.size()>0}">
-            <li th:each="e : ${expenses}" th:text="'Amount: $'+${e.amount}+' Description: '+${e.description}+' Category: '+${e.category}"></li>
-        </ol>
-        -->
-        <table th:if="${expenses.size()>0}" style="width:500px;text-align:center">
+        <h2 th:text="'Money spent so far: $'+${moneySpent}" style="color:blue"></h2>
+        
+        <h2 th:if="${availableMoney>0}" th:text="'Available money in budget: $'+${availableMoney}" style="color: green;"></h2>
+        <h2 th:unless="${availableMoney>0}" th:text="'Available money in budget: $'+${availableMoney}" style="color: red;"></h2>
+
+        <table th:if="${expenses.size()>0}" style="width:500px;text-align:center;">
             <tr>
                 <th>Amount</th>
                 <th>Description</th>
                 <th>Category</th>
             </tr>
             <tr th:each="e : ${expenses}">
-                <td th:text="${e.amount}"></th>
-                <td th:text="${e.description}"></th>
-                <td th:text="${e.category}"></th>
+                <td th:text="${e.amount}"></td>
+                <td th:text="${e.description}"></td>
+                <td th:text="${e.category}"></td>
+                <td><a th:href="@{/mybudget/delete (id=${e.id}) }">Delete</a></td>
             </tr>
         </table>
 
-        <form method="post">
+
+        <form method="post" style="padding: 20px">
             <span style="margin-right:20px"><b>Enter a new expense</b></span>
             <label for="amountBox">Amount: $</label>
             <input type="text" id="amountBox" name="amount"/>

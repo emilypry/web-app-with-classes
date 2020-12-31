@@ -31,6 +31,8 @@ public class ClassesController{
     public String showBudget(Model model){
         model.addAttribute("amount", myBudget.getTotalAmount());
         model.addAttribute("expenses", myBudget.getExpenses()); 
+        model.addAttribute("availableMoney", myBudget.getAvailableMoney());
+        model.addAttribute("moneySpent", myBudget.getMoneySpent());
         return "viewbudget";
     }
 
@@ -38,6 +40,7 @@ public class ClassesController{
     public String makeNewExpense(@ModelAttribute Expense expense, Model model){
         myBudget.addExpense(expense);
         model.addAttribute("amount", myBudget.getTotalAmount());
+        System.out.println(expense.getId());
         return "redirect:mybudget";
     }
 }

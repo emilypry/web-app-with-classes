@@ -1,21 +1,21 @@
 package com.emily.classespractice.models;
 
-import java.text.DecimalFormat;
-
 public class Expense {
     private double amount;
     private String description;
     private String category;
-    private int ID;
+    private int id;
     private static int id_tracker=0;
 
-    public Expense(){};
+    public Expense(){
+        this.id = id_tracker++;
+    };
     public Expense(double amount, String description, String category){
         this.amount = amount;
         this.description = description;
         this.category = category;
-        this.ID = id_tracker;
-        id_tracker += 1;
+        this.id = id_tracker++;
+        //id_tracker += 1;
     }
 
     public double getAmount(){
@@ -37,11 +37,11 @@ public class Expense {
     public void setCategory(String category){
         this.category = category;
     }
-    public int getID(){
-        return ID;
+    public int getId(){
+        return id;
     }
-    public void setID(int ID){
-        this.ID = ID;
+    public void setId(int id){
+        this.id = id;
     }
 
 }
