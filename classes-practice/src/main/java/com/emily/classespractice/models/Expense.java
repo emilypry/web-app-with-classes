@@ -1,5 +1,7 @@
 package com.emily.classespractice.models;
 
+import java.text.DecimalFormat;
+
 public class Expense {
     private double amount;
     private String description;
@@ -20,7 +22,8 @@ public class Expense {
         return amount;
     }
     public void setAmount(double amount){
-        this.amount = amount;
+        String two = String.format("%.2f", amount);
+        this.amount = Double.parseDouble(two);
     }
     public String getDescription(){
         return description;

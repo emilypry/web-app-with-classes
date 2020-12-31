@@ -14,7 +14,8 @@ public class Budget {
         return totalAmount;
     }
     public void setTotalAmount(double totalAmount){
-        this.totalAmount = totalAmount;
+        String two = String.format("%.2f", totalAmount);
+        this.totalAmount = Double.parseDouble(two);
     }
     public ArrayList<Expense> getExpenses(){
         return expenses;

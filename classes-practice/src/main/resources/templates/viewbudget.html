@@ -8,9 +8,23 @@
     <center>
         <h1 th:text="'Total amount in budget: '+${amount}"></h1>
 
+        <!--
         <ol th:if="${expenses.size()>0}">
             <li th:each="e : ${expenses}" th:text="'Amount: $'+${e.amount}+' Description: '+${e.description}+' Category: '+${e.category}"></li>
         </ol>
+        -->
+        <table th:if="${expenses.size()>0}" style="width:500px;text-align:center">
+            <tr>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Category</th>
+            </tr>
+            <tr th:each="e : ${expenses}">
+                <td th:text="${e.amount}"></th>
+                <td th:text="${e.description}"></th>
+                <td th:text="${e.category}"></th>
+            </tr>
+        </table>
 
         <form method="post">
             <span style="margin-right:20px"><b>Enter a new expense</b></span>
